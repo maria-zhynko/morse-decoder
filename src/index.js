@@ -39,15 +39,10 @@ const MORSE_TABLE = {
 
 function decode(expr) {
     // write your solution here
-       let arr = [];
+       const arr = [];
 
     for (let i = 0; i < expr.length - 1; i += 10) {
-        arr.push(MORSE_TABLE[expr
-                .slice(i, i + 10)
-                .replace(/00/g, "")
-                .replace(/11/g, "-")
-                .replace(/10/g, ".")
-                .replace(/\*{10}/, " ")]);
+        arr.push(MORSE_TABLE[expr.slice(i, i + 10).replace(/00/g, "").replace(/11/g, "-").replace(/10/g, ".").replace(/\*{10}/, " ")]);
     }
     console.log(arr);
     return arr.join``;
